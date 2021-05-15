@@ -1,12 +1,12 @@
 pipeline {
 	agent any
 	tools {
-    	maven 'my_mvn'
+    	maven 'Default'
 	}
 	stages {
     	stage("Checkout") {   
         	steps {               	 
-            	git url: '<YourGithubRepoURL>'          	 
+            	git url: 'git@github.com:gabbythomas/sample-spring-maven-app.git'          	 
            	 
         	}    
     	}
