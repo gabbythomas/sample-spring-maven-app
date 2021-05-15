@@ -6,7 +6,7 @@ pipeline {
 	stages {
     	stage("Checkout") {   
         	steps {               	 
-            	git url: 'git@github.com:gabbythomas/sample-spring-maven-app.git'          	 
+            	git branch: 'main', url: 'https://github.com/gabbythomas/sample-spring-maven-app.git'          	 
            	 
         	}    
     	}
