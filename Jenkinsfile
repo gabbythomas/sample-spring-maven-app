@@ -6,19 +6,18 @@ pipeline {
 	stages {
     	stage("Checkout") {   
         	steps {               	 
-            	git branch: 'main', url: 'https://github.com/gabbythomas/sample-spring-maven-app.git'          	 
-           	 
+              git branch: 'main', url: 'https://github.com/gabbythomas/sample-spring-maven-app.git'          	 
         	}    
     	}
     	stage('Build') {
         	steps {
-        	sh "mvn compile"  	 
+        	    sh "mvn compile"  	 
         	}
     	}
    	 
     	stage("Unit test") {          	 
         	steps {  	 
-            	sh "mvn test"          	 
+              sh "mvn test"          	 
        	}
       }
    }
