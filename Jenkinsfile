@@ -1,19 +1,23 @@
 pipeline {
 	agent any
 	tools {
-    	maven 'Default'
+    		maven 'Default'
 	}
 	stages {
-    	stage('Build') {
-          steps {
-              sh "mvn compile"  	 
-          }
-    	}
-   	 
-    	stage("Unit test") {          	 
-        	steps {  	 
-              sh "mvn test"          	 
-       	}
-      }
-   }
+    		stage('Build') {
+			steps {
+				sh "mvn compile"  	 
+          		}
+    		}
+    		stage("Unit test") {          	 
+        		steps {  	 
+              			sh "mvn test"          	 
+       			}
+      		}
+   	}
+	post {
+		always {
+			cleanWs()
+		}
+	}
 }
