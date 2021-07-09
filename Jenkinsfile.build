@@ -10,16 +10,16 @@ pipeline {
     }
 
     stage("Unit test") {
-      withMaven (maven: 'default') {
-        steps {
+      steps {
+        withMaven (maven: 'default') {
           sh 'mvn test'
         }
       }
     }
 
     stage("Package") {
-      withMaven (maven: 'default') {
-        steps {
+      steps {
+        withMaven (maven: 'default') {
           sh 'mvn package'
         }
       }
