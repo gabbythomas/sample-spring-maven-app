@@ -3,19 +3,25 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn compile'
+        withMaven (maven: 'default') {
+          sh 'mvn compile'
+        }
       }
     }
 
     stage("Unit test") {
-      steps {
-        sh 'mvn test'
+      withMaven (maven: 'default') {
+        steps {
+          sh 'mvn test'
+        }
       }
     }
 
     stage("Package") {
-      steps {
-        sh 'mvn package'
+      withMaven (maven: 'default') {
+        steps {
+          sh 'mvn package'
+        }
       }
     }
   }
